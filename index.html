@@ -11,15 +11,16 @@
     <script type="text/javascript" src="./css/jscex-async-powerpack.min.js"></script>
     <script type="text/javascript" src="./css/functions.js" charset="utf-8"></script>
     <script type="text/javascript" src="./css/love.js" charset="utf-8"></script>
+    <script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
       <style type="text/css">
 <!--
 .STYLE1 {color: #666666}
 -->
         </style>
 </head>
-    <body>
-      <audio autoplay="autopaly">
-          <source src="music/love.mp3" type="audio/mp3" />
+    <body onload="playAudio()">
+      <audio  id="audio" >
+          <source  src="music/love.mp3" type="audio/mp3"/>
       </audio>  
         <div id="main">
              <div id="wrap">
@@ -46,12 +47,21 @@
 <span class="STYLE1"></span>
                   <!-- <div id="clock"></div> -->
               </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
+                <canvas id="canvas" width="1100" height="680" onclick="playAudio()"></canvas>
             </div>
             
         </div>
     
     <script>
+        function playAudio(){
+            /* var x = document.getElementById("audio");
+            console.log(x,555)
+            x.play(); */
+            var audio = $('#audio');
+            console.log(audio,666)
+            audio[0].play();
+            
+        }
     </script>
 
     <script>
